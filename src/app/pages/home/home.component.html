@@ -17,7 +17,19 @@
     <div class="card-container">
       <h4 class="title">Últimas reservas</h4>
 
-      <div class="card-vertical-list"></div>
+      <div class="card-vertical-list">
+        @for (vehicle of vehicles.slice(0,3); track vehicle.name) {
+        <car-card
+          [name]="vehicle.name"
+          [year]="vehicle.year"
+          [type]="vehicle.type"
+          [engine]="vehicle.engine"
+          [size]="vehicle.size"
+          [image]="'assets/cars/' + vehicle.name + '.png'"
+        >
+        </car-card>
+        }
+      </div>
     </div>
   </div>
 </main>

@@ -65,3 +65,9 @@
   line-height: 20px;
   color: #1d2b3a;
 }
+
+.card-vertical-list {
+  display: flex;
+  max-width: 600px;
+  overflow-x: auto;
+}
