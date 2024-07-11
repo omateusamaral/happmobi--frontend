@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardComponent } from '../../components';
 import { Vehicle } from '../../../interfaces/vehicle.interface';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,7 @@ import { RouterOutlet } from '@angular/router';
 export class HomeComponent implements OnInit {
   public vehicles: Vehicle[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.loadVehicles();
@@ -29,5 +29,9 @@ export class HomeComponent implements OnInit {
         console.error('Error loading vehicles', error);
       }
     );
+  }
+
+  navigateSearchCarScreen() {
+    this.router.navigate(['/search-car']);
   }
 }
