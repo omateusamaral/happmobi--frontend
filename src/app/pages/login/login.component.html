@@ -1,0 +1,30 @@
+<main class="main-content">
+  <app-background-logo> </app-background-logo>
+  <div class="header">
+    <app-logo></app-logo>
+  </div>
+
+  <div class="form-container">
+    <input
+      type="text"
+      class="form-input"
+      id="userInput"
+      placeholder="Usuário"
+    />
+    <input
+      type="password"
+      class="form-input"
+      id="passwordInput"
+      placeholder="Senha"
+    />
+    <div class="button-container">
+      <button type="button" (click)="goToHome()">Entrar</button>
+
+      <p class="forget-password">Esqueci minha senha</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Ainda não tem cadastro? <span>Criar conta</span></p>
+  </footer>
+</main>
