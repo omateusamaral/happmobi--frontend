@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+}
+
+header > span {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  margin-left: 6px;
+}
+
+.content {
+  height: 100%;
+  background-color: #ffffff;
+}
+.header-actions {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.header-actions > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1d2b3a;
+}
