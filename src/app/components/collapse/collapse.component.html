@@ -1,0 +1,13 @@
+<div class="collapse-container">
+  <div class="collapse-header" (click)="toggle()">
+    <ng-content class="title" select="[collapse-header]"></ng-content>
+    @if (isOpen) {
+    <span class="material-icons-outlined">keyboard_arrow_down</span>
+    } @else {
+    <span class="material-icons-outlined"> keyboard_arrow_left </span>
+    }
+  </div>
+  <div class="collapse-content" [ngClass]="{ collapsed: !isOpen }">
+    <ng-content select="[collapse-content]"></ng-content>
+  </div>
+</div>

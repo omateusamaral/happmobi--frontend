@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { CollapseComponent } from '../../components';
 
 @Component({
   selector: 'app-search-car',
   standalone: true,
-  imports: [],
+  imports: [CollapseComponent],
   templateUrl: './search-car.component.html',
-  styleUrl: './search-car.component.css'
+  styleUrl: './search-car.component.css',
 })
-export class SearchCarComponent {
-
-}
+export class SearchCarComponent {}

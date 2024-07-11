@@ -1,0 +1,36 @@
+.collapse-container {
+  border: none;
+  margin: 10px 0;
+}
+
+.collapse-header {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f3f1f0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapse-content {
+  padding: 10px;
+  overflow: hidden;
+  transition-timing-function: ease-in;
+  transition: 0.5s;
+}
+
+.collapse-content.collapsed {
+  max-height: 0;
+  padding: 0 10px;
+}
+
+.material-icons-outlined {
+  font-size: 30px;
+  color: #c61d35;
+}
+
+.title {
+  color: #1d2b3a;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
