@@ -1,13 +1,15 @@
 <main class="main-content">
   <div class="header">
-    <img src="assets/home/background.png" alt="background" />
+    <img src="assets/home/background.png" id="background" alt="background" />
     <img src="assets/home/person.png" alt="avatar" id="avatar" />
   </div>
 
   <div id="home-background">
     <div class="filter-container">
-      <img src="assets/home/lupa.png" class="lupa" />
-      <input class="filter-input" placeholder="Buscar carro" />
+      <span style="display: flex; flex-direction: row">
+        <img src="assets/home/lupa.png" class="lupa" />
+        <input class="filter-input" placeholder="Buscar carro" />
+      </span>
       <button class="filter-button">
         <span class="material-icons filter-icon">filter_list</span>
         <span class="filter-text">Filtrar</span>
@@ -39,21 +41,22 @@
     </div>
     <footer>
       <div>
-        <span class="material-icons">home</span>
-        <p>Início</p>
+        <span class="material-icons-outlined first-item">home</span>
+        <p class="first-item">Início</p>
       </div>
+
       <div>
-        <span class="material-icons">home</span>
+        <span class="material-icons-outlined">list alt</span>
         <p>Agendamentos</p>
       </div>
 
       <div>
-        <span class="material-icons">home</span>
+        <span class="material-icons-outlined">call</span>
         <p>central</p>
       </div>
 
       <div>
-        <span class="material-icons">home</span>
+        <span class="material-icons-outlined">person</span>
         <p>Perfil</p>
       </div>
     </footer>

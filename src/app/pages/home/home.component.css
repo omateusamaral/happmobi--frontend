@@ -1,11 +1,19 @@
 .header {
-  display: flex;
-  flex-direction: column;
   height: 264px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#background {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 #avatar {
   width: 180px;
-  transform: translateY(-140%) translateX(70%);
+  position: absolute;
 }
 
 #home-background {
@@ -30,7 +38,8 @@
 .filter-button,
 .filter-input {
   background-color: #ffffff;
-  width: 100px;
+  width: 100%;
+  max-width: 100px;
   height: 55px;
   border-radius: 8px;
   border: none;
@@ -43,13 +52,14 @@
   line-height: 24px;
 }
 .filter-input {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   padding-left: 40px;
   margin-right: 14px;
 }
 .lupa {
   position: absolute;
-  left: 45px;
+  padding-left: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -68,7 +78,8 @@
 
 .card-vertical-list {
   display: flex;
-  max-width: 600px;
+  width: 100%;
+  max-width: 768px;
   overflow-x: auto;
 }
 
@@ -96,4 +107,39 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 14px;
+  box-shadow: 00px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgb(255, 255, 255);
+}
+
+footer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer > div > p {
+  color: #1d2b3a;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+footer > div > span {
+  font-size: 30px;
+  text-align: center;
+  width: 50px;
+  margin-bottom: 4px;
+}
+
+.first-item {
+  color: #c61d35 !important;
 }
