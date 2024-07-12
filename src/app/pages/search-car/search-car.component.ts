@@ -1,18 +1,29 @@
 import { AfterContentInit, Component, OnInit } from '@angular/core';
-import { CollapseComponent, CheckboxComponent } from '../../components';
+import {
+  CollapseComponent,
+  CheckboxComponent,
+  ToggleButtonComponent,
+} from '../../components';
 import { HttpClient } from '@angular/common/http';
 import { Vehicle } from '../../../interfaces/vehicle.interface';
+import { BackgroundLogoComponent } from '../../components/background-logo/background-logo.component';
 
 @Component({
   selector: 'app-search-car',
   standalone: true,
-  imports: [CollapseComponent, CheckboxComponent],
+  imports: [
+    CollapseComponent,
+    CheckboxComponent,
+    ToggleButtonComponent,
+    BackgroundLogoComponent,
+  ],
   templateUrl: './search-car.component.html',
   styleUrl: './search-car.component.css',
 })
-export class SearchCarComponen implements OnInit, AfterContentInit {
+export class SearchCarComponent implements OnInit, AfterContentInit {
   public checkboxes: string[] = [];
   public engineTypes: string[] = [];
+  public sizes: string[] = [];
   public vehicles: Vehicle[] = [];
 
   constructor(private http: HttpClient) {}
@@ -20,8 +31,9 @@ export class SearchCarComponen implements OnInit, AfterContentInit {
     this.loadVehicles();
   }
   ngAfterContentInit(): void {
-    this.loadCheckboxes();
     this.loadEngineTypes();
+    this.loadCheckboxes();
+    this.loadSizes();
   }
 
   loadVehicles(): void {
@@ -40,6 +52,12 @@ export class SearchCarComponen implements OnInit, AfterContentInit {
   }
 
   loadEngineTypes(): void {
-    this.engineTypes = [...new Set(this.vehicles.map((x) => x.engine))];
+    const data = this.vehicles.map((x) => x.engine);
+    this.engineTypes = [...new Set(data)];
+  }
+
+  loadSizes(): void {
+    const data = this.vehicles.map((x) => x.size);
+    this.sizes = [...new Set(data)];
   }
 }

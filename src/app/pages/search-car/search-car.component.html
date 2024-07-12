@@ -16,5 +16,19 @@
         <app-checkbox [checkboxes]="checkboxes"></app-checkbox>
       </div>
     </app-collapse>
+
+    <app-collapse>
+      <div collapse-header>Tipos de motores</div>
+      <div collapse-content>
+        <app-toggle-button [items]="engineTypes" helperText="Motor" />
+      </div>
+    </app-collapse>
+
+    <app-collapse>
+      <div collapse-header>Quantidade de lugares</div>
+      <div collapse-content>
+        <app-toggle-button [items]="sizes" helperText="" />
+      </div>
+    </app-collapse>
   </div>
 </main>
