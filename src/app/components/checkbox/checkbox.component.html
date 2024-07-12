@@ -1,0 +1,31 @@
+<div class="content">
+  <div class="left">
+    @for (item of checkboxes.slice(0, checkboxes.length /2); track item) {
+    <span class="container-input">
+      <input
+        type="checkbox"
+        [id]="item"
+        [name]="item"
+        [value]="item"
+        [placeholder]="item"
+      />
+      <label [htmlFor]="item">{{ item }}</label>
+    </span>
+    }
+  </div>
+  <div class="right">
+    @for (item of checkboxes.slice( checkboxes.length /2, checkboxes.length -1);
+    track item) {
+    <span class="container-input">
+      <input
+        type="checkbox"
+        [id]="item"
+        [name]="item"
+        [value]="item"
+        [placeholder]="item"
+      />
+      <label [htmlFor]="item">{{ item }}</label>
+    </span>
+    }
+  </div>
+</div>

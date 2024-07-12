@@ -15,7 +15,7 @@
   padding: 10px;
   overflow: hidden;
   transition-timing-function: ease-in;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .collapse-content.collapsed {

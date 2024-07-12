@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './collapse.component.css',
 })
 export class CollapseComponent {
-  isOpen = true;
+  public isOpen = true;
 
   toggle() {
     this.isOpen = !this.isOpen;
