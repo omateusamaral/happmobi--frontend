@@ -16,10 +16,10 @@ export class CheckboxComponent {
   public onCheckboxChange(event: any, item: string) {
     let data = this.filterService.getFilters();
 
-    if (data.sizes.includes(item) && !event.target.checked) {
-      data.sizes = data.sizes.filter((size) => size !== item);
+    if (data.types.includes(item) && !event.target.checked) {
+      data.types = data.types.filter((size) => size !== item);
     } else {
-      data.sizes.push(item);
+      data.types.push(item);
     }
 
     this.filterService.addToFilters(data);
@@ -27,6 +27,6 @@ export class CheckboxComponent {
 
   public isCheckboxChecked(item: string): boolean {
     let data = this.filterService.getFilters();
-    return data.sizes.includes(item);
+    return data.types.includes(item);
   }
 }

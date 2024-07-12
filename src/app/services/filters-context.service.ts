@@ -17,6 +17,7 @@ export class FiltersContextService {
     this.filters = {
       ...item,
     };
+    console.log(this.filters);
   }
 
   getFilters(): Filters {

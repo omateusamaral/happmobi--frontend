@@ -1,7 +1,12 @@
 <div class="content">
   <div name="select" id="select">
     @for (item of items; track item) {
-    <div class="option">{{ helperText }} {{ item }}</div>
+    <div
+      class="{{ isSelected(item, helperText) ? 'option selected' : 'option' }}"
+      (click)="onSelect(item, helperText)"
+    >
+      {{ helperText }} {{ item }}
+    </div>
     }
   </div>
 </div>
