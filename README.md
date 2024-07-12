@@ -4,7 +4,7 @@ O projeto esta rodando no [Angular CLI](https://github.com/angular/angular-cli) 
 
 ## Deploy in production
 
-URL: https://happmobi-frontend-ocr6avtwn-mateusamaralls-projects.vercel.app/
+URL: https://happmobi-frontend.vercel.app
 
 ## Development server
 
