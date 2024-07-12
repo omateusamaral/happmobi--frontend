@@ -1,4 +1,9 @@
-import { AfterContentInit, Component, OnInit } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewChecked,
+  Component,
+  OnInit,
+} from '@angular/core';
 import {
   CollapseComponent,
   CheckboxComponent,
@@ -7,6 +12,8 @@ import {
 } from '../../components';
 import { HttpClient } from '@angular/common/http';
 import { Vehicle } from '../../../interfaces/vehicle.interface';
+import { FiltersContextService } from '../../services/filters-context.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-car',
@@ -20,19 +27,23 @@ import { Vehicle } from '../../../interfaces/vehicle.interface';
   templateUrl: './search-car.component.html',
   styleUrl: './search-car.component.css',
 })
-export class SearchCarComponent implements OnInit, AfterContentInit {
+export class SearchCarComponent implements OnInit, AfterViewChecked {
   public checkboxes: string[] = [];
   public engineTypes: string[] = [];
   public sizes: string[] = [];
   public vehicles: Vehicle[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private filterService: FiltersContextService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     this.loadVehicles();
   }
-  ngAfterContentInit(): void {
-    this.loadEngineTypes();
+  ngAfterViewChecked(): void {
     this.loadCheckboxes();
+    this.loadEngineTypes();
     this.loadSizes();
   }
 
@@ -59,5 +70,18 @@ export class SearchCarComponent implements OnInit, AfterContentInit {
   loadSizes(): void {
     const data = this.vehicles.map((x) => x.size);
     this.sizes = [...new Set(data)];
+  }
+
+  clearFilters() {
+    this.filterService.addToFilters({
+      engines: [],
+      sizes: [],
+      types: [],
+    });
+  }
+
+  goToHomeScreen() {
+    this.clearFilters();
+    this.router.navigate(['/home']);
   }
 }

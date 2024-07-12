@@ -27,6 +27,9 @@
   font-size: 32px;
   padding: 4px;
 }
+.filter-text {
+  cursor: pointer;
+}
 
 .filter-container {
   display: flex;
