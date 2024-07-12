@@ -81,7 +81,11 @@ export class SearchCarComponent implements OnInit, AfterViewChecked {
   }
 
   goToHomeScreen() {
-    this.clearFilters();
     this.router.navigate(['/home']);
+  }
+
+  handleCancel() {
+    this.clearFilters();
+    this.goToHomeScreen();
   }
 }

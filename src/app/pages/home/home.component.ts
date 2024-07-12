@@ -1,14 +1,10 @@
-import {
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardComponent } from '../../components';
 import { Vehicle } from '../../../interfaces/vehicle.interface';
 import { Router, RouterOutlet } from '@angular/router';
 import { FiltersContextService } from '../../services/filters-context.service';
+import { debounceTime, distinctUntilChanged, Subject, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +14,7 @@ import { FiltersContextService } from '../../services/filters-context.service';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
+  private searchTerms = new Subject<string>();
   public vehicles: Vehicle[] = [];
   public vehiclesFiltered: Vehicle[] = [];
 
@@ -25,7 +22,15 @@ export class HomeComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private filterService: FiltersContextService
-  ) {}
+  ) {
+    this.searchTerms
+      .pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        switchMap((search: string) => this.searchVehicles(search))
+      )
+      .subscribe((results) => (this.vehiclesFiltered = results));
+  }
 
   ngOnInit(): void {
     this.loadVehicles();
@@ -65,5 +70,21 @@ export class HomeComponent implements OnInit {
     }
 
     this.vehiclesFiltered = data;
+  }
+
+  onSearch(event: any) {
+    this.searchTerms.next(event.target.value);
+  }
+
+  private searchVehicles(search: string): Promise<Vehicle[]> {
+    if (!search.length) {
+      return new Promise((resolve) => resolve(this.vehicles));
+    }
+    return new Promise((resolve) => {
+      const results = this.vehiclesFiltered.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
+      resolve(results);
+    });
   }
 }

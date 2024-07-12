@@ -8,7 +8,11 @@
     <div class="filter-container">
       <span style="display: flex; flex-direction: row">
         <img src="assets/home/lupa.png" class="lupa" />
-        <input class="filter-input" placeholder="Buscar carro" />
+        <input
+          class="filter-input"
+          placeholder="Buscar carro"
+          (keyup)="onSearch($event)"
+        />
       </span>
       <button class="filter-button" (click)="this.navigateSearchCarScreen()">
         <span class="material-icons filter-icon">filter_list</span>
@@ -34,7 +38,7 @@
       </div>
 
       <div class="card-vertical-list">
-        @for (vehicle of vehicles; track vehicle.name) {
+        @for (vehicle of vehiclesFiltered; track vehicle.name) {
         <car-card
           [name]="vehicle.name"
           [year]="vehicle.year"

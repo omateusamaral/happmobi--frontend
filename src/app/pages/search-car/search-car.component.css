@@ -32,3 +32,26 @@ header > span {
   color: #1d2b3a;
   cursor: pointer;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d2b3a;
+  padding: 16px;
+  border: none;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 354px;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}

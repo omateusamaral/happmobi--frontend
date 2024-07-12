@@ -47,8 +47,8 @@ export class ToggleButtonComponent {
   }
 
   private handleSizes(item: string, data: Filters) {
-    if (data.engines.includes(item)) {
-      data.sizes = data.sizes.filter((engine) => engine !== item);
+    if (data.sizes.includes(item)) {
+      data.sizes = data.sizes.filter((size) => size !== item);
     } else {
       data.sizes.push(item);
     }
