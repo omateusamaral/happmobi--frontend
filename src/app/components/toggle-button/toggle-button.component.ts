@@ -18,7 +18,7 @@ export class ToggleButtonComponent {
   helperText!: string;
 
   public isSelected(item: string, helperText: string): boolean {
-    let data = this.filterService.getFilters();
+    const data = this.filterService.getFilters();
 
     if (helperText === 'Motor') {
       return data.engines.includes(item);
@@ -27,7 +27,7 @@ export class ToggleButtonComponent {
   }
 
   public onSelect(item: string, helperText: string) {
-    let data = this.filterService.getFilters();
+    const data = this.filterService.getFilters();
 
     if (helperText === 'Motor') {
       this.handleEngine(item, data);

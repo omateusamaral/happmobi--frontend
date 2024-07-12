@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FiltersContextService } from '../../services/filters-context.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class CheckboxComponent {
   checkboxes!: string[];
 
   public onCheckboxChange(event: any, item: string) {
-    let data = this.filterService.getFilters();
+    const data = this.filterService.getFilters();
 
     if (data.types.includes(item) && !event.target.checked) {
       data.types = data.types.filter((size) => size !== item);
@@ -26,7 +26,7 @@ export class CheckboxComponent {
   }
 
   public isCheckboxChecked(item: string): boolean {
-    let data = this.filterService.getFilters();
+    const data = this.filterService.getFilters();
     return data.types.includes(item);
   }
 }

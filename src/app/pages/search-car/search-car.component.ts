@@ -1,9 +1,4 @@
-import {
-  AfterContentInit,
-  AfterViewChecked,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import {
   CollapseComponent,
   CheckboxComponent,

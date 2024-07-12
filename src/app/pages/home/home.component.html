@@ -7,7 +7,7 @@
   <div id="home-background">
     <div class="filter-container">
       <span style="display: flex; flex-direction: row">
-        <img src="assets/home/lupa.png" class="lupa" />
+        <img src="assets/home/lupa.png" class="lupa" alt="lupa" />
         <input
           class="filter-input"
           placeholder="Buscar carro"
@@ -25,7 +25,7 @@
 
       <div class="card-vertical-list">
         @for (vehicle of vehicles.slice(0,3); track vehicle.name) {
-        <car-card
+        <app-car-card
           [name]="vehicle.name"
           [year]="vehicle.year"
           [type]="vehicle.type"
@@ -33,13 +33,13 @@
           [size]="vehicle.size"
           [image]="'assets/cars/' + vehicle.name + '.png'"
         >
-        </car-card>
+        </app-car-card>
         }
       </div>
 
       <div class="card-vertical-list">
         @for (vehicle of vehiclesFiltered; track vehicle.name) {
-        <car-card
+        <app-car-card
           [name]="vehicle.name"
           [year]="vehicle.year"
           [type]="vehicle.type"
@@ -47,7 +47,7 @@
           [size]="vehicle.size"
           [image]="'assets/cars/' + vehicle.name + '.png'"
         >
-        </car-card>
+        </app-car-card>
         }
       </div>
 
