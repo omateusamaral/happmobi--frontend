@@ -3,10 +3,10 @@ import {
   CollapseComponent,
   CheckboxComponent,
   ToggleButtonComponent,
+  BackgroundLogoComponent,
 } from '../../components';
 import { HttpClient } from '@angular/common/http';
 import { Vehicle } from '../../../interfaces/vehicle.interface';
-import { BackgroundLogoComponent } from '../../components/background-logo/background-logo.component';
 
 @Component({
   selector: 'app-search-car',

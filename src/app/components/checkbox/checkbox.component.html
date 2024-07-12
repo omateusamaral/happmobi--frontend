@@ -8,6 +8,7 @@
         [name]="item"
         [value]="item"
         [placeholder]="item"
+        (click)="onCheckboxChange($event, item)"
       />
       <label [htmlFor]="item">{{ item }}</label>
     </span>
@@ -21,8 +22,9 @@
         type="checkbox"
         [id]="item"
         [name]="item"
-        [value]="item"
+        [checked]="isCheckboxChecked(item)"
         [placeholder]="item"
+        (click)="onCheckboxChange($event, item)"
       />
       <label [htmlFor]="item">{{ item }}</label>
     </span>
