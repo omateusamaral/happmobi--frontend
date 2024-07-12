@@ -11,7 +11,7 @@ import { FiltersContextService } from '../../services/filters-context.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-search-car',
+  selector: 'app-filter-vehicles',
   standalone: true,
   imports: [
     CollapseComponent,
@@ -19,10 +19,10 @@ import { Router } from '@angular/router';
     ToggleButtonComponent,
     BackgroundLogoComponent,
   ],
-  templateUrl: './search-car.component.html',
-  styleUrl: './search-car.component.css',
+  templateUrl: './filter-vehicles.component.html',
+  styleUrl: './filter-vehicles.component.css',
 })
-export class SearchCarComponent implements OnInit, AfterViewChecked {
+export class FilterVehiclesComponent implements OnInit, AfterViewChecked {
   public checkboxes: string[] = [];
   public engineTypes: string[] = [];
   public sizes: string[] = [];
@@ -68,19 +68,15 @@ export class SearchCarComponent implements OnInit, AfterViewChecked {
   }
 
   clearFilters() {
-    this.filterService.addToFilters({
-      engines: [],
-      sizes: [],
-      types: [],
-    });
+    this.filterService.clearFilters();
   }
 
   goToHomeScreen() {
     this.router.navigate(['/home']);
   }
 
-  handleCancel() {
-    this.clearFilters();
+  onCancel() {
+    this.filterService.clearFilters();
     this.goToHomeScreen();
   }
 }

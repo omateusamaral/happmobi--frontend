@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
   }
 
   navigateSearchCarScreen() {
-    this.router.navigate(['/search-car']);
+    this.router.navigate(['/filter-vehicles']);
   }
 
   loadVehiclesFiltered() {
@@ -78,6 +78,7 @@ export class HomeComponent implements OnInit {
 
   private searchVehicles(search: string): Promise<Vehicle[]> {
     if (!search.length) {
+      this.filterService.clearFilters();
       return new Promise((resolve) => resolve(this.vehicles));
     }
     return new Promise((resolve) => {

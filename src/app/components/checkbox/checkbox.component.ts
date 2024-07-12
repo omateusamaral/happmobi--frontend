@@ -22,7 +22,7 @@ export class CheckboxComponent {
       data.types.push(item);
     }
 
-    this.filterService.addToFilters(data);
+    this.filterService.setToFilters(data);
   }
 
   public isCheckboxChecked(item: string): boolean {

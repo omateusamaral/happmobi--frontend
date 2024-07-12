@@ -1,5 +1,9 @@
 import { Routes } from '@angular/router';
-import { LoginComponent, HomeComponent, SearchCarComponent } from './pages';
+import {
+  LoginComponent,
+  HomeComponent,
+  FilterVehiclesComponent,
+} from './pages';
 
 export const routes: Routes = [
   {
@@ -11,7 +15,7 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'search-car',
-    component: SearchCarComponent,
+    path: 'filter-vehicles',
+    component: FilterVehiclesComponent,
   },
 ];

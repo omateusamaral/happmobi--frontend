@@ -148,3 +148,7 @@ footer > div > span {
 .first-item {
   color: #c61d35 !important;
 }
+
+.nothing-found {
+  padding: 10px;
+}

@@ -48,6 +48,10 @@
           [image]="'assets/cars/' + vehicle.name + '.png'"
         >
         </app-car-card>
+        } @if (!vehiclesFiltered.length) {
+        <h4 class="nothing-found">
+          Hmm... que pena, não foi encontrado veículo baseado nestes filtros
+        </h4>
         }
       </div>
 

@@ -43,7 +43,7 @@ export class ToggleButtonComponent {
       data.engines.push(item);
     }
 
-    this.filterService.addToFilters(data);
+    this.filterService.setToFilters(data);
   }
 
   private handleSizes(item: string, data: Filters) {
@@ -53,6 +53,6 @@ export class ToggleButtonComponent {
       data.sizes.push(item);
     }
 
-    this.filterService.addToFilters(data);
+    this.filterService.setToFilters(data);
   }
 }

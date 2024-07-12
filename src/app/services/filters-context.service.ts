@@ -13,7 +13,7 @@ export class FiltersContextService {
 
   constructor() {}
 
-  addToFilters(item: Filters) {
+  setToFilters(item: Filters) {
     this.filters = {
       ...item,
     };
@@ -21,5 +21,13 @@ export class FiltersContextService {
 
   getFilters(): Filters {
     return this.filters;
+  }
+
+  clearFilters() {
+    this.filters = {
+      engines: [],
+      sizes: [],
+      types: [],
+    };
   }
 }
