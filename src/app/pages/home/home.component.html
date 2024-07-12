@@ -33,6 +33,20 @@
         }
       </div>
 
+      <div class="card-vertical-list">
+        @for (vehicle of vehicles; track vehicle.name) {
+        <car-card
+          [name]="vehicle.name"
+          [year]="vehicle.year"
+          [type]="vehicle.type"
+          [engine]="vehicle.engine"
+          [size]="vehicle.size"
+          [image]="'assets/cars/' + vehicle.name + '.png'"
+        >
+        </car-card>
+        }
+      </div>
+
       <div class="qrcode-button-container">
         <button type="button" class="qrcode-button">
           <img src="assets/home/qrcode.png" alt="QR code" />Acessar por QR Code
